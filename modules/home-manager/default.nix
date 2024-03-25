@@ -19,14 +19,17 @@
   programs.fzf.enableZshIntegration = true;
   programs.eza.enable = true;
   programs.git.enable = true;
-  programs.zsh.enable = true;
-  programs.zsh.enableCompletion = true;
-  programs.zsh.autosuggestion.enable = true;
-  programs.zsh.syntaxHighlighting.enable = true;
-  programs.zsh.shellAliases = {
-    ls = "ls --color=auto -F";
-    nixswitch = "darwin-rebuild switch --flake ~/.config/nix-darwin/.#";
-    nixup = "pushd ~/src/system-config; nix flake update; nixswitch; popd";
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
+    shellAliases = {
+      ls = "ls --color=auto -F";
+      nv = "nvim";
+      nixswitch = "darwin-rebuild switch --flake ~/.config/nix-darwin/.#";
+      nixup = "pushd ~/src/system-config; nix flake update; nixswitch; popd";
+    };
   };
   programs.zoxide = {
     enable = true;
@@ -38,7 +41,8 @@
   programs.alacritty = {
     enable = true;
     settings.font.normal.family = "JetBrainsMono Nerd Font Mono";
-    settings.font.size = 16;
+    settings.font.size = 14;
+    settings.window.option_as_alt = "OnlyRight";
   };
   # home.file.".inputrc".source = ./dotfiles/inputrc;
 }
