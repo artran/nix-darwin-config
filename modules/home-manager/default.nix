@@ -3,10 +3,10 @@
   home.stateVersion = "23.11";
   # specify my home-manager configs
   home.packages = with pkgs; [
-    ripgrep
-    fd
     curl
+    fd
     less
+    ripgrep
   ];
   home.sessionVariables = {
     PAGER = "less";
@@ -27,6 +27,11 @@
     ls = "ls --color=auto -F";
     nixswitch = "darwin-rebuild switch --flake ~/.config/nix-darwin/.#";
     nixup = "pushd ~/src/system-config; nix flake update; nixswitch; popd";
+  };
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
+    options = [ "--cmd cd"];
   };
   programs.starship.enable = true;
   programs.starship.enableZshIntegration = true;
