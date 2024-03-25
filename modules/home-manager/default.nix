@@ -27,6 +27,12 @@
     shellAliases = {
       ls = "ls --color=auto -F";
       nv = "nvim";
+      vimdiff = "nvim -d";
+      ap = "ansible-playbook";
+      getopt = "$(brew --prefix)/opt/gnu-getopt/bin/getopt";
+      brewup = "brew update && brew upgrade && brew cleanup";
+      whatsmyip = "dig +short ip @dns.toys";
+
       nixswitch = "darwin-rebuild switch --flake ~/.config/nix-darwin/.#";
       nixup = "pushd ~/src/system-config; nix flake update; nixswitch; popd";
     };
