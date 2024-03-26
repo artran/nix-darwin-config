@@ -28,6 +28,9 @@
     oh-my-zsh = {
       enable = true;
       theme = "robbyrussell";
+      extraConfig = ''
+        zstyle :omz:plugins:ssh-agent ssh-add-args --apple-load-keychain
+      '';
       plugins = [
         "git"
         "history"
