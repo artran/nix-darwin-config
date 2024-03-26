@@ -5,7 +5,10 @@
   environment = {
     shells = with pkgs; [ bash zsh ];
     loginShell = pkgs.zsh;
-    systemPackages = [ pkgs.coreutils ];
+    systemPackages = with pkgs; [
+      coreutils
+      tmux
+    ];
     systemPath = [ "/usr/local/bin" ];
     pathsToLink = [ "/Applications" ];
   };

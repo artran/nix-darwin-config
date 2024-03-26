@@ -12,6 +12,7 @@
     PAGER = "less";
     CLICLOLOR = 1;
     EDITOR = "nvim";
+    ZSH_TMUX_AUTOSTART = "true";
   };
   programs.bat.enable = true;
   programs.bat.config.theme = "TwoDark";
@@ -24,6 +25,17 @@
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
+    oh-my-zsh = {
+      enable = true;
+      theme = "robbyrussell";
+      plugins = [
+        "git"
+        "history"
+        "rust"
+        "ssh-agent"
+        "tmux"
+      ];
+    };
     shellAliases = {
       ls = "ls --color=auto -F";
       nv = "nvim";
