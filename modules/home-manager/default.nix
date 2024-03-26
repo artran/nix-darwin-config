@@ -40,11 +40,12 @@
       ];
     };
     shellAliases = {
+      "." = "source";
+      cat = "bat";
       ls = "ls --color=auto -F";
       nv = "nvim";
       vimdiff = "nvim -d";
       ap = "ansible-playbook";
-      getopt = "$(brew --prefix)/opt/gnu-getopt/bin/getopt";
       brewup = "brew update && brew upgrade && brew cleanup";
       whatsmyip = "dig +short ip @dns.toys";
 
