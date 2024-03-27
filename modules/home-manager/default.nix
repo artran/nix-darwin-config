@@ -9,6 +9,7 @@
     less
     luajitPackages.luarocks
     nodePackages.nodejs
+    pass
     pinentry_mac
     ripgrep
     silicon

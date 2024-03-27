@@ -27,3 +27,15 @@ minimal steps to install are:
 
 The config repo is based on the template project provided by Astronvim and
 described [here](https://docs.astronvim.com/#%EF%B8%8F-configuration)
+
+## Setup GPG for signing git commits
+
+- `nv ~/.gnupg/gpg-agent.conf`
+- Add `pinentry-program /usr/local/bin/pinentry`
+- Import or generate your keys
+
+## Setup the password manager
+
+- See [the web page](https://www.passwordstore.org) for details
+- Either `pass init "<GPG_Key_ID>"`
+- Or `git clone git@github.com:<USER>/.password-store.git ~/.password-store`
