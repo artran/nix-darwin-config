@@ -15,3 +15,15 @@ I want the following features:
 - Neovim with customisation for development
 - Rust
 - Suitable NerdFonts
+
+## Extra steps for Neovim (optional)
+
+This will install neovim but I use [Astronvim](https://astronvim.com) so to get
+the full features that will need to be installed after the nix rebuild. The
+minimal steps to install are:
+
+- `git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim`
+- `git clone https://github.com/<username>/<config_repo> ~/.config/nvim/lua/user`
+
+The config repo is based on the template project provided by Astronvim and
+described [here](https://docs.astronvim.com/#%EF%B8%8F-configuration)
