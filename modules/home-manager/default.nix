@@ -66,5 +66,29 @@
     settings.font.size = 14;
     settings.window.option_as_alt = "OnlyRight";
   };
-  # home.file.".inputrc".source = ./dotfiles/inputrc;
+  programs.tmux = {
+    enable = true;
+    clock24 = true;
+    mouse = true;
+    keyMode = "vi";
+    prefix = "C-a";
+    baseIndex = 1;
+    plugins = with pkgs.tmuxPlugins; [
+      battery
+      power-theme
+      vim-tmux-navigator
+    ];
+    extraConfig = ''
+      set -g status-right '#{battery_status_bg} #{battery_percentage} #{battery_remain} | #{cpu_percentage} | %H:%M '
+      run-shell ${pkgs.tmuxPlugins.cpu}/share/tmux-plugins/cpu/cpu.tmux
+      run-shell ${pkgs.tmuxPlugins.battery}/share/tmux-plugins/battery/battery.tmux
+      bind-key -T copy-mode-vi 'v' send -X begin-selection # start selecting text with "v"
+      bind-key -T copy-mode-vi 'y' send -X copy-selection # copy text with "y"
+      unbind -T copy-mode-vi MouseDragEnd1Pane # don't exit copy mode after dragging with mouse
+      unbind %
+      bind | split-window -h
+      unbind '"'
+      bind - split-window -v
+    '';
+  };
 }
