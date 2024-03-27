@@ -7,6 +7,7 @@
     loginShell = pkgs.zsh;
     systemPackages = with pkgs; [
       coreutils
+      rustup
       tmux
     ];
     systemPath = [ "/usr/local/bin" ];
