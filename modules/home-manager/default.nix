@@ -5,8 +5,12 @@
   home.packages = with pkgs; [
     curl
     fd
+    lazygit
     less
+    luajitPackages.luarocks
+    nodePackages.nodejs
     ripgrep
+    silicon
   ];
   home.sessionVariables = {
     PAGER = "less";
@@ -16,6 +20,7 @@
   };
   programs.bat.enable = true;
   programs.bat.config.theme = "TwoDark";
+  programs.neovim.enable = true;
   programs.fzf.enable = true;
   programs.fzf.enableZshIntegration = true;
   programs.eza.enable = true;
