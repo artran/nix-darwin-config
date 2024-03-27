@@ -79,7 +79,7 @@
       vim-tmux-navigator
     ];
     extraConfig = ''
-      set -g status-right '#{battery_status_bg} #{battery_percentage} #{battery_remain} | #{cpu_percentage} | %H:%M '
+      set -g status-right '#{battery_status_bg} #{battery_icon} #{battery_remain} | #{cpu_icon} #{cpu_percentage} | %H:%M '
       run-shell ${pkgs.tmuxPlugins.cpu}/share/tmux-plugins/cpu/cpu.tmux
       run-shell ${pkgs.tmuxPlugins.battery}/share/tmux-plugins/battery/battery.tmux
       bind-key -T copy-mode-vi 'v' send -X begin-selection # start selecting text with "v"
