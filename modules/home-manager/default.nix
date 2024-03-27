@@ -9,6 +9,7 @@
     less
     luajitPackages.luarocks
     nodePackages.nodejs
+    pinentry_mac
     ripgrep
     silicon
   ];
@@ -17,6 +18,7 @@
     CLICLOLOR = 1;
     EDITOR = "nvim";
     ZSH_TMUX_AUTOSTART = "true";
+    GPG_TTY="$(tty)";
   };
   programs.bat.enable = true;
   programs.bat.config.theme = "TwoDark";
